@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #faf9f6;
+    background-image: radial-gradient(#e0dcd3 1px, transparent 1px);
+    background-size: 20px 20px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   DESAIN NAVBAR & BERANDA (INDEX.HTML)
+   ========================================== */
+.main-nav {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #e67e22;
+    font-size: 1.5rem;
+}
+
+.home-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.home-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Sistem Grid untuk Kartu Resep */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.recipe-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f1f2f6;
+}
+
+.recipe-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(230, 126, 34, 0.15);
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.recipe-card:hover .card-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff4757;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    color: #2f3542;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #747d8c;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.btn-read {
+    color: #e67e22;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   DESAIN HALAMAN DETAIL RESEP (RESEP.HTML)
+   ========================================== */
+.container.detail-page {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    padding: 40px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.btn-nav {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.btn-nav:hover {
+    color: #e67e22;
+    transform: translateX(-5px);
+}
+
+.category-badge {
+    background-color: #fff3e0;
+    color: #e67e22;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+header { text-align: center; }
+
+.image-wrapper {
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+    max-width: 500px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.recipe-image:hover { transform: scale(1.05); }
+
+.recipe-title {
+    font-size: 3.5rem;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: #2c3e50;
+    margin: 15px 0;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+    color: #7f8c8d;
+    font-weight: 600;
+}
+
+/* ==========================================
+   TOMBOL INTERAKTIF
+   ========================================== */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:active { transform: scale(0.95); }
+
+.btn-like { background: #fff; color: #ff4757; border: 2px solid #ff4757; }
+.btn-like:hover { background: #fff0f1; }
+.btn-like.liked { background: #ff4757; color: #fff; }
+
+.btn-print { background: #2f3542; color: #fff; }
+.btn-print:hover { background: #57606f; transform: translateY(-3px); }
+
+.btn-share { background: #f1f2f6; color: #2f3542; }
+.btn-share:hover { background: #dfe4ea; transform: translateY(-3px); }
+.active-share { background-color: #2ed573 !important; color: white !important; }
+
+.btn-save { background: #e67e22; color: white; }
+.btn-save:hover { background: #d35400; transform: translateY(-3px); }
+.btn-save.saved { background: #2f3542; }
+
+/* ==========================================
+   KONTEN UTAMA (BAHAN & CARA)
+   ========================================== */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.bahan-section {
+    background-color: #fffaf0;
+    border-left: 6px solid #f39c12;
+    border-radius: 16px;
+    padding: 35px;
+}
+
+.cara-section {
+    background-color: #f8f9fa;
+    border-left: 6px solid #3498db;
+    border-radius: 16px;
+    padding: 35px;
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    color: #2d3436;
+    border-bottom: 2px solid rgba(0,0,0,0.05);
+    padding-bottom: 12px;
+}
+
+ul, ol { margin-left: 25px; }
+li { margin-bottom: 15px; font-size: 1.1rem; color: #555; }
+
+ol li::marker { color: #3498db; font-weight: 800; font-size: 1.2rem; }
+ul li::marker { color: #f39c12; font-size: 1.5rem; }
+
+@media print {
+    body { background: none; padding: 0; }
+    .container, .main-nav, .home-container { box-shadow: none; padding: 0; border: none; }
+    .action-buttons, .top-nav, .main-nav { display: none; }
+}
