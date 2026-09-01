@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resep Ayam Geprek Spesial</title>
+    <link rel="stylesheet" href="g.css">
+</head>
+<body>
+    
+    <div class="container detail-page">
+        <!-- Navigasi Kembali ke index.html -->
+        <nav class="top-nav">
+            <a href="index.html" class="btn-nav">⬅ Kembali ke Beranda</a>
+            <span class="category-badge">Kategori: Ayam & Bebek</span>
+        </nav>
+
+        <header>
+            <div class="image-wrapper">
+                <img src="ayam geprek.webp" alt="Ayam Geprek Spesial" class="recipe-image">
+            </div>
+            
+            <h1 class="recipe-title">"Ayam Geprek Spesial"</h1>
+
+            <div class="recipe-meta">
+                <span>⏱️ Waktu: 30 Menit</span>
+                <span>🔥 Tingkat: Mudah</span>
+                <span>🍽️ Porsi: 2 Orang</span>
+            </div>
+
+            <div class="action-buttons">
+                <button id="btn-like" class="btn btn-like">
+                    <span id="heart-icon">🤍</span> Suka (<span id="like-count">128</span>)
+                </button>
+                <button onclick="window.print()" class="btn btn-print">🖨️ Cetak</button>
+                <button id="btn-share" class="btn btn-share">🔗 Bagikan</button>
+                <button id="btn-save" class="btn btn-save">🔖 Simpan</button>
+            </div>
+        </header>
+
+        <main>
+            <section class="bahan-section">
+                <h2>Bahan-bahan:</h2>
+                <ul>
+                    <li>Ayam, potong-potong sesuai selera</li>
+                    <li>Tepung bumbu serbaguna</li>
+                    <li>Cabai rawit merah (sesuai tingkat kepedasan)</li>
+                    <li>3 siung bawang putih</li>
+                    <li>Minyak goreng panas</li>
+                    <li>Garam dan penyedap rasa secukupnya</li>
+                </ul>
+            </section>
+
+            <section class="cara-section">
+                <h2>Cara Pembuatan:</h2>
+                <ol>
+                    <li>Siapkan ayam, baluri dengan tepung bumbu, lalu goreng dalam minyak panas hingga matang dan berwarna cokelat keemasan. Tiriskan.</li>
+                    <li>Siapkan cobek. Ulek cabai rawit, bawang putih, dan garam sampai halus atau sedikit kasar sesuai selera.</li>
+                    <li>Tuangkan 2-3 sendok makan minyak goreng yang masih benar-benar panas (bekas menggoreng ayam) ke atas sambal di ulekan. Aduk rata.</li>
+                    <li>Letakkan ayam goreng di atas ulekan sambal, lalu geprek (memarkan) ayam hingga hancur dan tercampur rata dengan sambal.</li>
+                    <li>Sajikan dengan nasi hangat.</li>
+                </ol>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Logika Interaksi Tombol
+        const btnLike = document.getElementById('btn-like');
+        const heartIcon = document.getElementById('heart-icon');
+        const likeCount = document.getElementById('like-count');
+        let isLiked = false;
+
+        btnLike.addEventListener('click', () => {
+            let count = parseInt(likeCount.innerText);
+            isLiked ? (heartIcon.innerText = '🤍', likeCount.innerText = count - 1, btnLike.classList.remove('liked')) 
+                    : (heartIcon.innerText = '❤️', likeCount.innerText = count + 1, btnLike.classList.add('liked'));
+            isLiked = !isLiked;
+        });
+
+        const btnShare = document.getElementById('btn-share');
+        btnShare.addEventListener('click', function() {
+            const originalText = this.innerHTML;
+            this.innerHTML = '✅ Disalin!';
+            this.classList.add('active-share');
+            setTimeout(() => { this.innerHTML = originalText; this.classList.remove('active-share'); }, 2000);
+        });
+
+        const btnSave = document.getElementById('btn-save');
+        let isSaved = false;
+        btnSave.addEventListener('click', function() {
+            isSaved ? (this.innerHTML = '🔖 Simpan', this.classList.remove('saved')) 
+                    : (this.innerHTML = '🚩 Tersimpan', this.classList.add('saved'));
+            isSaved = !isSaved;
+        });
+    </script>
+</body>
+</html>
